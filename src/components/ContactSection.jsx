@@ -172,6 +172,9 @@ const ContactSection = () => {
               style={{ width: '100%', height: '52px', borderRadius: '8px', backgroundColor: '#FFFFFF', color: '#000000', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 500, fontSize: '14px' }}>
               {loading ? "Submitting..." : <>Contact Us <span className="ml-2">→</span></>}
             </button>
+            {success && (
+              <p className="text-green-300 text-sm text-center">{success}</p>
+            )}
           </form>
         </div>
       </div>
