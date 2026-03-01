@@ -1,67 +1,54 @@
 import { FaYoutube, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-import SLogo from "../assets/logo.png";
+import profile2Img from "../assets/Profile2.png";
 
 function Footer() {
   return (
-    <footer className="bg-black text-white w-full py-12 px-6 md:px-12">
+    <footer className="bg-black text-white w-full" style={{ paddingTop: 'clamp(40px, 8vw, 48px)', paddingBottom: 'clamp(40px, 8vw, 48px)', paddingLeft: 'clamp(20px, 4vw, 48px)', paddingRight: 'clamp(20px, 4vw, 48px)' }}>
       <div className="max-w-7xl mx-auto flex flex-col">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-8 pb-8">
-          {/* Logo */}
-          <div className="flex items-center gap-2">
-            <img src={SLogo} alt="Swypd" className="w-8 h-8 object-contain" />
-            <h1 className="font-semibold text-2xl tracking-tight">Swypd</h1>
+        <div className="flex flex-col md:flex-row items-center justify-between pb-8" style={{ gap: 'clamp(24px, 5vw, 32px)' }}>
+          <div className="flex items-center" style={{ gap: 'clamp(6px, 1vw, 8px)' }}>
+            <img src={profile2Img} alt="Profile" className="rounded-full object-cover w-8 h-8" />
+            <h1 className="font-semibold tracking-tight" style={{ fontSize: 'clamp(20px, 2.5vw, 24px)' }}>Swypd</h1>
           </div>
-
-          {/* Links */}
-          <div className="flex flex-wrap justify-center gap-4 md:gap-8 text-gray-400 text-sm font-medium">
+          <div className="flex flex-wrap justify-center text-gray-400 font-medium" style={{ gap: 'clamp(12px, 2vw, 32px)', fontSize: 'clamp(13px, 1.5vw, 14px)' }}>
             <a href="#" className="hover:text-white transition">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition">Waitlist Dashboard</a>
             <a href="#" className="hover:text-white transition">Contact Us</a>
           </div>
 
-          {/* Social Icons (Desktop) */}
-          <div className="hidden lg:flex gap-4 items-center">
+          <div className="hidden lg:flex items-center" style={{ gap: 'clamp(12px, 1.5vw, 16px)' }}>
             <SocialIcons />
           </div>
         </div>
-
-        {/* Bottom Section */}
-        <div className="border-t border-white/10 pt-8 flex flex-col items-center gap-6">
-
-          {/* Social Icons for Mobile/Tablet */}
-          <div className="flex lg:hidden gap-4 items-center">
+        <div className="border-t border-white/10 flex flex-col items-center" style={{ paddingTop: 'clamp(24px, 4vw, 32px)', gap: 'clamp(20px, 3vw, 24px)' }}>
+          <div className="flex lg:hidden items-center" style={{ gap: 'clamp(12px, 1.5vw, 16px)' }}>
             <SocialIcons />
           </div>
-
-          <p className="text-gray-500 text-sm font-medium text-center">
+          <p className="text-gray-500 font-medium text-center" style={{ fontSize: 'clamp(12px, 1.5vw, 14px)' }}>
             © 2026 Swypd. All rights reserved.
           </p>
-
-
         </div>
       </div>
     </footer>
   );
 }
-
 function SocialIcons() {
+  const iconSize = { width: 'clamp(28px, 3.5vw, 32px)', height: 'clamp(28px, 3.5vw, 32px)', fontSize: 'clamp(16px, 2vw, 20px)' };
   return (
     <>
-      <a href="#" className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/10 transition text-red-500">
-        <FaYoutube className="text-xl" />
+      <a href="#" className="flex items-center justify-center rounded-full hover:bg-white/10 transition text-red-500" style={iconSize}>
+        <FaYoutube />
       </a>
-      <a href="#" className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/10 transition text-blue-400">
-        <FaLinkedin className="text-xl" />
+      <a href="#" className="flex items-center justify-center rounded-full hover:bg-white/10 transition text-blue-400" style={iconSize}>
+        <FaLinkedin />
       </a>
-      <a href="#" className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/10 transition text-pink-500">
-        <FaInstagram className="text-xl" />
+      <a href="#" className="flex items-center justify-center rounded-full hover:bg-white/10 transition text-pink-500" style={iconSize}>
+        <FaInstagram />
       </a>
-      <a href="#" className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/10 transition text-white">
-        <FaXTwitter className="text-xl" />
+      <a href="#" className="flex items-center justify-center rounded-full hover:bg-white/10 transition text-white" style={iconSize}>
+        <FaXTwitter />
       </a>
     </>
   );
 }
-
 export default Footer;
